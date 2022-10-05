@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,700");
+:root{
+	--color:#f4e409;
+	--color2: #eebaqb;
+	/* look coolor.com */
+}
 * {
 	box-sizing: border-box;
 	margin:0;
@@ -11,4 +16,50 @@ body {
 	font-family: "Raleway", sans-serif;
 	font-size: 1.2rem;
 	line-height: 1.45;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.sidebar{
+	background-color: #41414f;
+	flex: 1 1 20%;
+	min-width: 300px;
+	padding: 3rem;
+}
+
+.logo{
+	text-transform: uppercase;
+	margin-bottom: 2rem;
+	font-size: 2rem;
+}
+
+.logo span{
+	font-weight: 700;
+}
+
+.nav-item{
+	color: #939393;
+	text-decoration: none;
+	margin-right: 2em;
+	font-size: 1.7rem;
+	display: inline-block;
+}
+
+@media(min-width: 1500px){
+	.nav-item{
+		display:block;
+		margin: 7vh 0;
+	}
+}
+
+.nav-item.active{
+	color: #c4c4c4;
+	font-weight: bold;
+}
+
+.main-content{
+	flex: 1 1 80%;
+	min-height: 100vh;
+	font-size: 2rem;
+	padding: 3rem;
 }
