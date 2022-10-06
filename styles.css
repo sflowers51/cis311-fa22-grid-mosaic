@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,700");
 :root{
-	--color:#f4e409;
-	--color2: #eebaqb;
+	--color:#03a9f4;
+	--color2: #1e7cb1;
+	--color3: #1f5172;
+	--color4: #172b39;
+	--color5: #000;
 	/* look coolor.com */
 }
 * {
@@ -30,7 +33,7 @@ body {
 .logo{
 	text-transform: uppercase;
 	margin-bottom: 2rem;
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
 .logo span{
@@ -50,6 +53,138 @@ body {
 		display:block;
 		margin: 7vh 0;
 	}
+
+	.grid{
+		grid-auto-columns: 1fr;
+		grid-auto-rows: 7rem;
+		grid-template-areas:
+		"one two two two two"
+		"one three three four eight"
+		"one six five four eight"
+		"one six seven seven eight"
+		"nine nine nine nine eight"; 
+	}
+
+	.toggle{
+		visibility: hidden;
+	}
+}
+
+@media(max-width: 1500px){
+	.logo nav{
+		display: flex;
+	}
+
+	.sidebar {
+		display: flex;
+	}
+
+	.sidebar div{
+		margin: auto;
+		font-size: 2rem ;
+	}
+	.grid{
+		grid-auto-columns: 1fr;
+		grid-auto-rows: 7rem;
+		grid-template-areas:
+		"one two two two two"
+		"one three three four eight"
+		"one six five four eight"
+		"one six seven seven eight"
+		"nine nine nine nine eight"; 
+	}
+
+	.toggle{
+		visibility: hidden;
+	}
+
+}
+
+@media(max-width: 600px){
+	.grid{
+		grid-auto-rows: 10rem;
+		grid-template-areas: 
+		"one"
+		"two"
+		"three"
+		"four"
+		"five"
+		"six"
+		"seven"
+		"eight"
+		"nine";
+	}
+
+	.sidebar{
+		padding: 0px;
+		padding-bottom: 1rem;
+	}
+
+	.sidebar .logo{
+		z-index: 2;
+	}
+
+	.menu{
+		height: 0;
+		width: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.menu.active{
+		position: absolute;
+		width: 100%;
+		height: auto;
+		padding: 110px;
+		padding-bottom: 40px;
+		text-align: center;
+		background-color: #41414f;
+		z-index: 1;
+	}
+
+	.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: url('images/menu.png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    cursor: pointer;
+	z-index: 2;
+	visibility: visible;
+
+	}	
+
+	.toggle.active{
+    	background: url('images/close.png');
+    	background-repeat: no-repeat;
+    	background-size: 25px;
+    	background-position: center;
+    	cursor: pointer;
+		z-index: 2;
+		visibility: visible;
+	}
+	
+	/*
+	.menu{
+		
+	}
+	/* .menu{
+		position: absolute;
+		padding: 0px;
+		height: 0px;
+		margin: 0px;
+		z-index: -1;
+	} 
+
+	.menu.active{
+		position: absolute;
+		height: 100%;
+		align-items: center;
+	}
+	*/
+
 }
 
 .nav-item.active{
@@ -62,4 +197,78 @@ body {
 	min-height: 100vh;
 	font-size: 2rem;
 	padding: 3rem;
+	
 }
+
+.main-content div{
+	text-align: center;
+	justify-content: center;
+	
+}
+
+.portfolio div{
+	border: #c4c4c4 solid;
+}
+
+.main-content .one, .two, .eight, .nine{
+	background-color: #1f5172;
+}
+
+.main-content .three, .four, .five, .six, .seven{
+	background-color: #1e7cb7;
+}
+
+  .one{
+	grid-area: one;
+  }
+
+  .one, .two, .three, .four, .five, .six,.seven,.eight, .nine, img{
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+	opacity: 55%;
+  }
+
+  .two{
+	grid-area: two;
+  }
+  .three {
+	grid-area: three;
+  }
+  .four {
+	grid-area: four;
+  }
+  .five{
+	grid-area: five;
+  }
+  .six {
+	grid-area: six;
+  }
+  .seven {
+	grid-area: seven;
+  }
+  .eight {
+	grid-area: eight;
+  }
+  .nine {
+	grid-area: nine;
+  }
+
+.grid{
+	display: grid;
+	gap: 1rem;
+
+	/*
+	grid-template-areas: 
+	'one'
+	'two'
+	'three'
+	'four'
+	'five'
+	'six'
+	'seven'
+	'eight';
+	*/
+	padding-block: 1rem;
+}
+
